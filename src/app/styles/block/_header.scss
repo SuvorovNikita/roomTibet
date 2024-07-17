@@ -1,0 +1,39 @@
+.header {
+  padding-top: 16px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding-bottom: 463px;
+  }
+
+  &__logo {
+    margin-right: auto;
+
+    @include tablet {
+      max-width: 120px;
+    }
+
+    @include mobile {
+      max-width: 84px;
+    }
+  }
+
+  &__menu {
+    margin-right: 49px;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 24px;
+    }
+
+    &-link {
+      color: var(--color-light);
+
+      @include hover {
+        color: var(--color-yellow);
+      }
+    }
+  }
+}

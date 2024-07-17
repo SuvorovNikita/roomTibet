@@ -1,0 +1,10 @@
+.hero {
+  &__title {
+    font-family: var(--font-family-second);
+    color: var(--color-light);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    padding-bottom: 41px;
+  }
+}
