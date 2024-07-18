@@ -20,12 +20,18 @@
     font-size: 14px;
     font-weight: 400;
     color: var(--color-light);
-    row-gap: 16px;
+    // row-gap: 16px;
   }
 
   &__link {
+    display: flex;
     position: relative;
     padding-left: 15px;
+    padding-bottom: 16px;
+
+    // &:last-child {
+    //   padding-bottom: 0;
+    // }
 
     @include hover {
       color: var(--color-yellow);
@@ -34,7 +40,7 @@
 
     &::after {
       position: absolute;
-      top: 50%;
+      top: 25%;
       left: 3px;
       translate: -50% -50%;
       content: "";

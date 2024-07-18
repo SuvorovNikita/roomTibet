@@ -10,7 +10,7 @@
     content: "";
     position: absolute;
     top: 50%;
-    left: 7px;
+    left: 50%;
     width: 70%;
     height: 2px;
     background-color: var(--color-light-alt);
@@ -18,10 +18,10 @@
   }
 
   &::before {
-    rotate: 45deg;
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 
   &::after {
-    rotate: -45deg;
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
