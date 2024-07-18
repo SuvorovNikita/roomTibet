@@ -83,7 +83,7 @@ export default function Home() {
 
       <main></main>
 
-      {/* <dialog
+      <dialog
         className="mobile-overlay visible-mobile"
         id="mobileOverlay"
         open={isDialogOpen}
@@ -100,73 +100,28 @@ export default function Home() {
         <div className="mobile-overlay__body">
           <ul className="mobile-overlay__list">
             <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href="/">
+              <a className="mobile-overlay__link" href=".#">
                 Про гида
               </a>
             </li>
             <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href="/">
+              <a className="mobile-overlay__link" href=".#">
                 Программа тура
               </a>
             </li>
             <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href="/">
+              <a className="mobile-overlay__link" href=".#">
                 Стоимость
               </a>
             </li>
             <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href="/">
+              <a className="mobile-overlay__link" href=".#">
                 Блог
               </a>
             </li>
             <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href="/">
+              <a className="mobile-overlay__link" href=".#">
                 Контакты
-              </a>
-            </li>
-          </ul>
-        </div>
-      </dialog> */}
-
-      <dialog
-        class="mobile-overlay visible-mobile"
-        id="mobileOverlay"
-        open={isDialogOpen}
-      >
-        <form class="mobile-overlay__close-button-wrapper">
-          <button
-            class="mobile-overlay__close-button cross-button"
-            onClick={() => setIsDialogOpen(false)}
-            type="submit"
-          >
-            <span class="visually-hidden">Close navigation menu</span>
-          </button>
-        </form>
-        <div class="mobile-overlay__body">
-          <ul class="mobile-overlay__list">
-            <li class="mobile-overlay__item">
-              <a class="mobile-overlay__link" href="/">
-                About us
-              </a>
-            </li>
-            <li class="mobile-overlay__item">
-              <a class="mobile-overlay__link" href="/">
-                Services
-              </a>
-            </li>
-            <li class="mobile-overlay__item">
-              <a class="mobile-overlay__link" href="/">
-                Use Cases
-              </a>
-            </li>
-            <li class="mobile-overlay__item">
-              <a class="mobile-overlay__link" href="/">
-                Pricing
-              </a>
-            </li>
-            <li class="mobile-overlay__item">
-              <a class="mobile-overlay__link" href="/">
-                Blog
               </a>
             </li>
           </ul>

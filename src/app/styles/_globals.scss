@@ -1,6 +1,6 @@
 body {
   @include fluid-text(18, 16);
-
+  box-sizing: border-box;
   font-family: var(--font-family-base);
   font-weight: 500;
   line-height: 1.4;

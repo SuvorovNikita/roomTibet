@@ -4,24 +4,43 @@
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 16px;
+  padding: 50px 16px 16px;
   border: none;
-  background-color: #1a3e3e;
-
-  margin: 0;
-
-  border: none;
+  background-color: var(--color-accent);
 
   &__close-button-wrapper {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 10px;
   }
 
   &__list {
-    @include flex-center;
-
+    display: flex;
     flex-direction: column;
-    row-gap: 30px;
-    min-height: 80vh;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-light);
+    row-gap: 16px;
+  }
+
+  &__link {
+    position: relative;
+    padding-left: 15px;
+
+    @include hover {
+      color: var(--color-yellow);
+      text-decoration: underline;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 3px;
+      translate: -50% -50%;
+      content: "";
+      width: 6px;
+      height: 10px;
+      background-image: url(../../assets/img/icon/arrow.svg);
+    }
   }
 }

@@ -7,6 +7,10 @@
   padding-left: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body,
 :where(blockquote, figure):where([class]) {
   margin: 0;
