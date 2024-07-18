@@ -1,17 +1,25 @@
 .header {
   padding-top: 16px;
 
+  @include tablet {
+    padding-top: 24px;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
     padding-bottom: 463px;
+
+    @include tablet {
+      padding-bottom: 234px;
+    }
   }
 
   &__logo {
     margin-right: auto;
 
     @include tablet {
-      max-width: 120px;
+      max-width: 100px;
     }
 
     @include mobile {
@@ -22,10 +30,18 @@
   &__menu {
     margin-right: 49px;
 
+    @include tablet {
+      font-size: 13px;
+    }
+
     &-list {
       display: flex;
       align-items: center;
       column-gap: 24px;
+
+      @include tablet {
+        column-gap: 14px;
+      }
     }
 
     &-link {
