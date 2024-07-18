@@ -50,6 +50,8 @@ p:where(:not([class]):not(:last-child)) {
 
 img {
   display: block;
+  user-select: none;
+  pointer-events: none;
   max-width: 100%;
 }
 
