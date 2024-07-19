@@ -2,17 +2,47 @@
   &__select,
   &__input {
     color: var(--color-light);
+    color-scheme: dark;
     height: var(--input-height);
-    font-weight: 700;
     font-size: 16px;
+    font-weight: 700;
     line-height: 1.5;
     background-color: inherit;
-    padding-inline: 16px;
+    padding: 0 16px;
     width: 270px;
     border: none;
     outline: none;
     border: 1px solid var(--color-blue-ligtht);
     border-radius: var(--border-radius-mid);
+    appearance: none;
+
+    @include desktop {
+      width: 204px;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__select {
+    cursor: pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) 50%;
+    background-size: 22px;
+    background-image: url(../../assets/img/icon/arrow-down.svg);
+  }
+
+  &__input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    background-position: calc(100% - 16px) 50%;
+    background-size: 22px;
+    background: url(../../assets/img/icon/date.svg) no-repeat;
   }
 
   &__label {
@@ -20,5 +50,9 @@
     font-size: 14px;
     line-height: 1.5;
     color: var(--color-light);
+
+    @include mobile {
+      display: none;
+    }
   }
 }

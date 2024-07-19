@@ -82,11 +82,14 @@ export default function Home() {
                 <div className="search__body">
                   <div className="search__field field">
                     <select
+                      required
                       className="field__select"
                       id="location"
                       name="location"
                     >
-                      <option value="">Локация для тура</option>
+                      <option value="" selected hidden>
+                        Локация для тура
+                      </option>
                       <option value="location1">Россия</option>
                       <option value="location2">США</option>
                       <option value="location3">Бразилия</option>
@@ -95,28 +98,35 @@ export default function Home() {
                   </div>
                   <div className="search__field field">
                     <input
+                      required
                       className="field__input"
                       id="date"
                       name="date"
                       type="date"
-                      placeholder="Дата похода"
                     />
                     <label className="field__label">укажите диапазон</label>
                   </div>
                   <div className="search__field field">
                     <select
+                      required
                       className="field__select"
                       id="participants"
                       name="participants"
                     >
-                      <option value="">Участники</option>
+                      <option value="" selected hidden>
+                        Участники
+                      </option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
+                      <option value="4">4</option>
                     </select>
                     <label className="field__label">минимум 4 человека</label>
                   </div>
-                  <button className="search__button button" type="submit">
+                  <button
+                    className="search__button button button--transparent"
+                    type="submit"
+                  >
                     Найти программу
                   </button>
                 </div>

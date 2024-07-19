@@ -15,4 +15,17 @@
     background-color: var(--color-light);
     color: var(--color-accent);
   }
+
+  &--transparent {
+    height: var(--input-height);
+    background-color: var(--color-light);
+    color: var(--color-accent);
+    padding-inline: 36px;
+    font-weight: 700;
+
+    @include hover {
+      background-color: var(--color-accent);
+      color: var(--color-light);
+    }
+  }
 }

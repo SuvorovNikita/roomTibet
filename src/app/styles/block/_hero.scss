@@ -1,4 +1,10 @@
 .hero {
+  padding-bottom: 82px;
+
+  @include mobile {
+    padding-bottom: 50px;
+  }
+
   &__title {
     font-family: var(--font-family-second);
     color: var(--color-light);

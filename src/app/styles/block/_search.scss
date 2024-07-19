@@ -4,14 +4,35 @@
   background: var(--rgb);
   border-radius: var(--border-radius);
 
+  @include mobile {
+    padding: unset;
+    background: unset;
+    backdrop-filter: unset;
+  }
+
   &__body {
     display: flex;
     justify-content: space-between;
+    column-gap: 20px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 24px;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      gap: 0;
+    }
   }
 
   &__field {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
+  }
+
+  &__button {
+    align-self: self-start;
   }
 }
