@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 50px 16px 16px;
+  padding: 50px var(--container-padding-x);
   border: none;
   background-color: var(--color-accent);
 
@@ -20,7 +20,6 @@
     font-size: 14px;
     font-weight: 400;
     color: var(--color-light);
-    // row-gap: 16px;
   }
 
   &__link {
@@ -28,10 +27,6 @@
     position: relative;
     padding-left: 15px;
     padding-bottom: 16px;
-
-    // &:last-child {
-    //   padding-bottom: 0;
-    // }
 
     @include hover {
       color: var(--color-yellow);
