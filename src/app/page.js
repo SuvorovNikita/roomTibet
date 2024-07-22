@@ -163,8 +163,8 @@ export default function Home() {
                     н.э., то есть более двух тысячелетий назад. Ричард
                     МакКлинток, профессор латыни из колледжа Hampden-Sydney,
                     штат Вирджиния, взял одно из самых странных слов в Lorem
-                    Ipsum, "consectetur" и занялся его поисками в классической
-                    латинской литературе.
+                    Ipsum, &#34;consectetur&#34; и занялся его поисками в
+                    классической латинской литературе.
                   </p>
                 </div>
                 <button className="content__button button" type="button">
