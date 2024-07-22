@@ -1,5 +1,5 @@
 .section {
-  &--padding {
+  &--p100 {
     padding: 100px 0;
 
     @include tablet {
@@ -7,10 +7,22 @@
     }
   }
 
+  &--p80 {
+    padding: 80px 0 100px;
+
+    @include tablet {
+      padding: 50px 0 10px;
+    }
+  }
+
   &--bg {
     background-image: url(../../assets/img/bg.png);
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  &--dark-ligtht {
+    background-color: var(--color-dark-ligtht);
   }
 
   &__body {

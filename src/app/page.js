@@ -1,13 +1,25 @@
 "use client";
-
+import { useState } from "react";
 import Image from "next/image";
+
 import logo from "@/app/assets/img/logo.svg";
 import Img1 from "@/app/assets/img/media/1.png";
 import Img2 from "@/app/assets/img/media/2.png";
-
-import { useState } from "react";
+import Img3 from "@/app/assets/img/programm/1.png";
+import Img4 from "@/app/assets/img/programm/2.png";
+import Img5 from "@/app/assets/img/programm/3.png";
+import Img6 from "@/app/assets/img/programm/4.png";
 
 export default function Home() {
+  const menuItems = [
+    { text: "Главная", href: ".#" },
+    { text: "Про гида", href: ".#" },
+    { text: "Программа тура", href: ".#" },
+    { text: "Стоимость", href: ".#" },
+    { text: "Блог", href: ".#" },
+    { text: "Контакты", href: ".#" },
+  ];
+
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
@@ -27,36 +39,13 @@ export default function Home() {
               </a>
               <nav className="header__menu hidden-mobile">
                 <ul className="header__menu-list">
-                  <li className="header__menu-item">
-                    <a href="" className="header__menu-link">
-                      Главная
-                    </a>
-                  </li>
-                  <li className="header__menu-item">
-                    <a href="" className="header__menu-link">
-                      Про гида
-                    </a>
-                  </li>
-                  <li className="header__menu-item">
-                    <a href="" className="header__menu-link">
-                      Программа тура
-                    </a>
-                  </li>
-                  <li className="header__menu-item">
-                    <a href="" className="header__menu-link">
-                      Стоимость
-                    </a>
-                  </li>
-                  <li className="header__menu-item">
-                    <a href="" className="header__menu-link">
-                      Блог
-                    </a>
-                  </li>
-                  <li className="header__menu-item">
-                    <a href="" className="header__menu-link">
-                      Контакты
-                    </a>
-                  </li>
+                  {menuItems.map(({ text, href }, index) => (
+                    <li key={index} className="header__menu-item">
+                      <a href={href} className="header__menu-link">
+                        {text}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </nav>
               <button
@@ -140,15 +129,27 @@ export default function Home() {
       </section>
 
       <main className="main">
-        <section className="section section--padding section--light">
+        <section className="section section--p100">
           <div className="container">
             <div className="section__body">
               <div className="media">
                 <div className="media__pic">
-                  <Image src={Img1} width={350} height={400} alt="Горы" />
+                  <Image
+                    src={Img1}
+                    width={350}
+                    height={400}
+                    alt="Горы"
+                    priority
+                  />
                 </div>
                 <div className="media__body">
-                  <Image src={Img2} width={350} height={400} alt="Горы" />
+                  <Image
+                    src={Img2}
+                    width={350}
+                    height={400}
+                    alt="Горы"
+                    priority
+                  />
                   <button className="media__play" type="button"></button>
                 </div>
               </div>
@@ -174,6 +175,53 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="section section--p80 section--dark-ligtht">
+          <div className="container">
+            <div className="section__body">
+              <div className="content">
+                <h3 className="content__subtitle">наше предложение</h3>
+                <h2 className="content__title">Лучшие программы для тебя</h2>
+                <div className="content__text">
+                  <p>
+                    Его корни уходят в один фрагмент классической латыни 45 года
+                    н.э., то есть более двух тысячелетий назад. Ричард
+                    МакКлинток, профессор латыни из колледжа.
+                  </p>
+                </div>
+                <ul className="content__list">
+                  <li className="content__item">
+                    <span className="content__list-title">Опытный гид</span>
+                    Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.
+                  </li>
+                  <li className="content__item">
+                    <span className="content__list-title">Опытный гид</span>
+                    Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.
+                  </li>
+                  <li className="content__item">
+                    <span className="content__list-title">Опытный гид</span>
+                    Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.
+                  </li>
+                </ul>
+                <button className="content__button button" type="button">
+                  Стоимость программ
+                </button>
+              </div>
+              <div className="media grid grid--2">
+                <Image src={Img3} alt="" width={250} height={250} priority />
+                <Image src={Img4} alt="" width={250} height={250} priority />
+                <Image src={Img5} alt="" width={250} height={250} priority />
+                <Image src={Img6} alt="" width={250} height={250} priority />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <dialog
@@ -192,31 +240,13 @@ export default function Home() {
         </form>
         <div className="mobile-overlay__body">
           <ul className="mobile-overlay__list">
-            <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href=".#">
-                Про гида
-              </a>
-            </li>
-            <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href=".#">
-                Программа тура
-              </a>
-            </li>
-            <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href=".#">
-                Стоимость
-              </a>
-            </li>
-            <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href=".#">
-                Блог
-              </a>
-            </li>
-            <li className="mobile-overlay__item">
-              <a className="mobile-overlay__link" href=".#">
-                Контакты
-              </a>
-            </li>
+            {menuItems.map(({ text, href }, index) => (
+              <li key={index} className="mobile-overlay__item">
+                <a className="mobile-overlay__link" href={href}>
+                  {text}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </dialog>
