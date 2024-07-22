@@ -2,6 +2,10 @@
 import { useState } from "react";
 import Image from "next/image";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+
 import logo from "@/app/assets/img/logo.svg";
 import Img1 from "@/app/assets/img/media/1.png";
 import Img2 from "@/app/assets/img/media/2.png";
@@ -9,6 +13,9 @@ import Img3 from "@/app/assets/img/programm/1.png";
 import Img4 from "@/app/assets/img/programm/2.png";
 import Img5 from "@/app/assets/img/programm/3.png";
 import Img6 from "@/app/assets/img/programm/4.png";
+import slide1 from "@/app/assets/img/slider/1.png";
+import slide2 from "@/app/assets/img/slider/2.png";
+import slide3 from "@/app/assets/img/slider/3.png";
 
 export default function Home() {
   const menuItems = [
@@ -219,6 +226,46 @@ export default function Home() {
                 <Image src={Img5} alt="" width={250} height={250} priority />
                 <Image src={Img6} alt="" width={250} height={250} priority />
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--p80">
+          <div className="container">
+            <div className="section__inner">
+              <h3 className="content__subtitle">по версии отдыхающих</h3>
+              <h2 className="content__title">Популярные направления</h2>
+            </div>
+            <div className="card">
+              <Swiper spaceBetween={50} slidesPerView={3}>
+                <SwiperSlide>
+                  <Image
+                    src={slide1}
+                    alt=""
+                    width={380}
+                    height={500}
+                    priority
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Image
+                    src={slide2}
+                    alt=""
+                    width={380}
+                    height={500}
+                    priority
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Image
+                    src={slide3}
+                    alt=""
+                    width={380}
+                    height={500}
+                    priority
+                  />
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
         </section>
