@@ -1,0 +1,36 @@
+.media {
+  &__pic {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__body {
+    position: relative;
+    margin: -274px 0 0 130px;
+
+    @include mobile {
+      margin: 0;
+    }
+  }
+
+  &__play {
+    @include abs-center;
+    @include square(50px);
+
+    content: "";
+    background-color: var(--rgb-play);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/img/icon/play.svg");
+    cursor: pointer;
+    will-change: transform;
+    transition: transform 0.3s ease;
+    border: none;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

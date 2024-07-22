@@ -1,0 +1,42 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 566px;
+
+  &__subtitle {
+    line-height: 0.83333;
+    color: var(--color-yellow);
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__text {
+    line-height: 1.5;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__button {
+    align-self: flex-start;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      align-self: center;
+    }
+  }
+}

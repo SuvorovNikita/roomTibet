@@ -1,7 +1,26 @@
 .section {
+  &--padding {
+    padding: 100px 0;
+
+    @include tablet {
+      padding: 50px 0;
+    }
+  }
+
   &--bg {
     background-image: url(../../assets/img/bg.png);
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+
+    @include tablet {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 }

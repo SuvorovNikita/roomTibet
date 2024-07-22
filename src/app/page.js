@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import logo from "@/app/assets/img/logo.svg";
+import Img1 from "@/app/assets/img/media/1.png";
+import Img2 from "@/app/assets/img/media/2.png";
+
 import { useState } from "react";
 
 export default function Home() {
@@ -87,7 +90,7 @@ export default function Home() {
                       id="location"
                       name="location"
                     >
-                      <option value="" selected hidden>
+                      <option value="" defaultValue hidden>
                         Локация для тура
                       </option>
                       <option value="location1">Россия</option>
@@ -113,7 +116,7 @@ export default function Home() {
                       id="participants"
                       name="participants"
                     >
-                      <option value="" selected hidden>
+                      <option value="" defaultValue hidden>
                         Участники
                       </option>
                       <option value="1">1</option>
@@ -136,7 +139,42 @@ export default function Home() {
         </div>
       </section>
 
-      <main></main>
+      <main className="main">
+        <section className="section section--padding section--light">
+          <div className="container">
+            <div className="section__body">
+              <div className="media">
+                <div className="media__pic">
+                  <Image src={Img1} width={350} height={400} alt="Горы" />
+                </div>
+                <div className="media__body">
+                  <Image src={Img2} width={350} height={400} alt="Горы" />
+                  <button className="media__play" type="button"></button>
+                </div>
+              </div>
+              <div className="content">
+                <h3 className="content__subtitle">о нашем походе</h3>
+                <h2 className="content__title">
+                  Исследуйте все горные массивы мира вместе с нами
+                </h2>
+                <div className="content__text">
+                  <p>
+                    Его корни уходят в один фрагмент классической латыни 45 года
+                    н.э., то есть более двух тысячелетий назад. Ричард
+                    МакКлинток, профессор латыни из колледжа Hampden-Sydney,
+                    штат Вирджиния, взял одно из самых странных слов в Lorem
+                    Ipsum, "consectetur" и занялся его поисками в классической
+                    латинской литературе.
+                  </p>
+                </div>
+                <button className="content__button button" type="button">
+                  Программа тура
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <dialog
         className="mobile-overlay visible-mobile"
