@@ -409,7 +409,8 @@ export default function Home() {
                   </SwiperSlide>
                 </Swiper>
               ) : (
-                <div className="card-popular">
+                <>
+                  {" "}
                   <div className="card-popular__item">
                     <div className="card-pupular__image">
                       <Image
@@ -557,7 +558,7 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
           </div>
