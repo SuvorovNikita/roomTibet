@@ -399,6 +399,15 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="section section--p80 section--dark-ligtht">
+          <div className="container">
+            <div className="section__inner">
+              <h3 className="content__subtitle">делимся впечатлениями</h3>
+              <h2 className="content__title">Блог о путешествиях</h2>
+            </div>
+          </div>
+        </section>
       </main>
 
       <dialog
