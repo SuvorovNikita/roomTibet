@@ -236,12 +236,10 @@ export default function Home() {
                 breakpoints={{
                   320: {
                     slidesPerView: 1,
-                    slidesPerGroup: 2,
                     spaceBetween: 20,
                   },
                   767: {
                     slidesPerView: 2,
-                    slidesPerGroup: 2,
                     spaceBetween: 20,
                   },
                   1024: {

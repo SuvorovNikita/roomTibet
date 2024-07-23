@@ -76,10 +76,6 @@
     font-size: 16px;
     line-height: 1.5;
     color: var(--color-light);
-
-    @include tablet {
-      font-size: 12px;
-    }
   }
 
   &__button {
@@ -87,6 +83,9 @@
     align-self: start;
   }
 }
+
 .swiper-slide {
-  max-width: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
