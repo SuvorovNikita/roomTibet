@@ -13,6 +13,10 @@
     @include tablet {
       padding: 50px 0 10px;
     }
+
+    @include mobile {
+      padding: 50px 0 50px;
+    }
   }
 
   &--bg {
