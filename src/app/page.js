@@ -406,6 +406,9 @@ export default function Home() {
               <h3 className="content__subtitle">делимся впечатлениями</h3>
               <h2 className="content__title">Блог о путешествиях</h2>
             </div>
+            <button className="button" type="button">
+              Другие материалы
+            </button>
           </div>
         </section>
       </main>
