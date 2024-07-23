@@ -1,0 +1,35 @@
+.card-popular {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+
+  &__item {
+    position: relative;
+    max-width: 380px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius-large-alt);
+  }
+
+  &__reating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    backdrop-filter: blur(4px);
+    background: rgba(253, 253, 253, 0.4);
+    border-radius: 4px 0 0 4px;
+    padding: 4px 8px;
+    height: 32px;
+
+    svg {
+      margin-right: 4px;
+      color: var(--color-yellow);
+    }
+  }
+}

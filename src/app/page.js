@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -29,6 +29,18 @@ export default function Home() {
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <section className="section section--bg">
@@ -36,13 +48,7 @@ export default function Home() {
           <header className="header">
             <div className="header__inner">
               <a className="header__logo logo" href="#">
-                <Image
-                  src={logo}
-                  alt="Румтибет"
-                  width={137}
-                  height={72}
-                  priority
-                />
+                <Image src={logo} alt="Румтибет" priority />
               </a>
               <nav className="header__menu hidden-mobile">
                 <ul className="header__menu-list">
@@ -236,36 +242,323 @@ export default function Home() {
               <h3 className="content__subtitle">по версии отдыхающих</h3>
               <h2 className="content__title">Популярные направления</h2>
             </div>
-            <div className="card">
-              <Swiper spaceBetween={50} slidesPerView={3}>
-                <SwiperSlide>
-                  <Image
-                    src={slide1}
-                    alt=""
-                    width={380}
-                    height={500}
-                    priority
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <Image
-                    src={slide2}
-                    alt=""
-                    width={380}
-                    height={500}
-                    priority
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <Image
-                    src={slide3}
-                    alt=""
-                    width={380}
-                    height={500}
-                    priority
-                  />
-                </SwiperSlide>
-              </Swiper>
+            <div className="card-popular">
+              {isMobile ? (
+                <Swiper
+                  slidesPerView={isMobile ? 1 : 2}
+                  spaceBetween={30}
+                  className="swiper-container"
+                >
+                  <SwiperSlide>
+                    <div className="card-popular__item">
+                      <div className="card-pupular__image">
+                        <Image src={slide1} alt="" priority />
+                      </div>
+                      <div className="card-popular__reating">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 17.27L16.15 19.78C16.91 20.24 17.84 19.56 17.64 18.7L16.54 13.98L20.21 10.8C20.88 10.22 20.52 9.12 19.64 9.04999L14.81 8.64L12.92 4.17999C12.58 3.36999 11.42 3.36999 11.08 4.17999L9.19 8.62999L4.36 9.03999C3.48 9.10999 3.12 10.21 3.79 10.79L7.46 13.97L6.36 18.69C6.16 19.55 7.09 20.23 7.85 19.77L12 17.27Z"
+                            fill="#F2BE22"
+                          />
+                        </svg>
+                        4.9
+                      </div>
+                      <div className="card-popular__overlay overlay">
+                        <div className="overlay__info">
+                          <div className="overlay__title">
+                            <span className="overlay__name">
+                              Озеро возле гор
+                            </span>
+                            <span className="overlay__name-desc">
+                              романтическое приключение
+                            </span>
+                          </div>
+                          <div className="overlay__price">480 $</div>
+                        </div>
+                        <div className="overlay__description">
+                          <p>
+                            Его корни уходят в один фрагмент классической латыни
+                            45 года н.э., то есть более двух тысячелетий назад.
+                            Ричард МакКлинток, профессор латыни из колледжа
+                            Hampden-Sydney, штат Вирджиния, взял одно из самых
+                            странных слов в Lorem Ipsum, &#34;consectetur&#34; и
+                            занялся его поисками в классической латинской
+                            литературе.
+                          </p>
+                        </div>
+                        <button
+                          className="overlay__button button"
+                          type="button"
+                        >
+                          Программа тура
+                        </button>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="card-popular__item">
+                      <div className="card-pupular__image">
+                        <Image src={slide2} alt="" priority />
+                      </div>
+                      <div className="card-popular__reating">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 17.27L16.15 19.78C16.91 20.24 17.84 19.56 17.64 18.7L16.54 13.98L20.21 10.8C20.88 10.22 20.52 9.12 19.64 9.04999L14.81 8.64L12.92 4.17999C12.58 3.36999 11.42 3.36999 11.08 4.17999L9.19 8.62999L4.36 9.03999C3.48 9.10999 3.12 10.21 3.79 10.79L7.46 13.97L6.36 18.69C6.16 19.55 7.09 20.23 7.85 19.77L12 17.27Z"
+                            fill="#F2BE22"
+                          />
+                        </svg>
+                        4.5
+                      </div>
+                      <div className="card-popular__overlay overlay">
+                        <div className="overlay__info">
+                          <div className="overlay__title">
+                            <span className="overlay__name">Ночь в горах</span>
+                            <span className="overlay__name-desc">
+                              в компании друзей
+                            </span>
+                          </div>
+                          <div className="overlay__price">500 $</div>
+                        </div>
+                        <div className="overlay__description">
+                          <p>
+                            Его корни уходят в один фрагмент классической латыни
+                            45 года н.э., то есть более двух тысячелетий назад.
+                            Ричард МакКлинток, профессор латыни из колледжа
+                            Hampden-Sydney, штат Вирджиния, взял одно из самых
+                            странных слов в Lorem Ipsum, &#34;consectetur&#34; и
+                            занялся его поисками в классической латинской
+                            литературе.
+                          </p>
+                        </div>
+                        <button
+                          className="overlay__button button"
+                          type="button"
+                        >
+                          Программа тура
+                        </button>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="card-popular__item">
+                      <div className="card-pupular__image">
+                        <Image
+                          src={slide3}
+                          alt=""
+                          width={380}
+                          height={500}
+                          priority
+                        />
+                      </div>
+                      <div className="card-popular__reating">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 17.27L16.15 19.78C16.91 20.24 17.84 19.56 17.64 18.7L16.54 13.98L20.21 10.8C20.88 10.22 20.52 9.12 19.64 9.04999L14.81 8.64L12.92 4.17999C12.58 3.36999 11.42 3.36999 11.08 4.17999L9.19 8.62999L4.36 9.03999C3.48 9.10999 3.12 10.21 3.79 10.79L7.46 13.97L6.36 18.69C6.16 19.55 7.09 20.23 7.85 19.77L12 17.27Z"
+                            fill="#F2BE22"
+                          />
+                        </svg>
+                        5.0
+                      </div>
+                      <div className="card-popular__overlay overlay">
+                        <div className="overlay__info">
+                          <div className="overlay__title">
+                            <span className="overlay__name">Йога в горах</span>
+                            <span className="overlay__name-desc">
+                              для тех, кто забоится о себе
+                            </span>
+                          </div>
+                          <div className="overlay__price">230 $</div>
+                        </div>
+                        <div className="overlay__description">
+                          <p>
+                            Его корни уходят в один фрагмент классической латыни
+                            45 года н.э., то есть более двух тысячелетий назад.
+                            Ричард МакКлинток, профессор латыни из колледжа
+                            Hampden-Sydney, штат Вирджиния, взял одно из самых
+                            странных слов в Lorem Ipsum, &#34;consectetur&#34; и
+                            занялся его поисками в классической латинской
+                            литературе.
+                          </p>
+                        </div>
+                        <button
+                          className="overlay__button button"
+                          type="button"
+                        >
+                          Программа тура
+                        </button>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+              ) : (
+                <div className="card-popular">
+                  <div className="card-popular__item">
+                    <div className="card-pupular__image">
+                      <Image
+                        src={slide1}
+                        alt=""
+                        width={380}
+                        height={500}
+                        priority
+                      />
+                    </div>
+                    <div className="card-popular__reating">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 17.27L16.15 19.78C16.91 20.24 17.84 19.56 17.64 18.7L16.54 13.98L20.21 10.8C20.88 10.22 20.52 9.12 19.64 9.04999L14.81 8.64L12.92 4.17999C12.58 3.36999 11.42 3.36999 11.08 4.17999L9.19 8.62999L4.36 9.03999C3.48 9.10999 3.12 10.21 3.79 10.79L7.46 13.97L6.36 18.69C6.16 19.55 7.09 20.23 7.85 19.77L12 17.27Z"
+                          fill="#F2BE22"
+                        />
+                      </svg>
+                      4.9
+                    </div>
+                    <div className="card-popular__overlay overlay">
+                      <div className="overlay__info">
+                        <div className="overlay__title">
+                          <span className="overlay__name">Озеро возле гор</span>
+                          <span className="overlay__name-desc">
+                            романтическое приключение
+                          </span>
+                        </div>
+                        <div className="overlay__price">480 $</div>
+                      </div>
+                      <div className="overlay__description">
+                        <p>
+                          Его корни уходят в один фрагмент классической латыни
+                          45 года н.э., то есть более двух тысячелетий назад.
+                          Ричард МакКлинток, профессор латыни из колледжа
+                          Hampden-Sydney, штат Вирджиния, взял одно из самых
+                          странных слов в Lorem Ipsum, &#34;consectetur&#34; и
+                          занялся его поисками в классической латинской
+                          литературе.
+                        </p>
+                      </div>
+                      <button className="overlay__button button" type="button">
+                        Программа тура
+                      </button>
+                    </div>
+                  </div>
+                  <div className="card-popular__item">
+                    <div className="card-pupular__image">
+                      <Image
+                        src={slide2}
+                        alt=""
+                        width={380}
+                        height={500}
+                        priority
+                      />
+                    </div>
+                    <div className="card-popular__reating">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 17.27L16.15 19.78C16.91 20.24 17.84 19.56 17.64 18.7L16.54 13.98L20.21 10.8C20.88 10.22 20.52 9.12 19.64 9.04999L14.81 8.64L12.92 4.17999C12.58 3.36999 11.42 3.36999 11.08 4.17999L9.19 8.62999L4.36 9.03999C3.48 9.10999 3.12 10.21 3.79 10.79L7.46 13.97L6.36 18.69C6.16 19.55 7.09 20.23 7.85 19.77L12 17.27Z"
+                          fill="#F2BE22"
+                        />
+                      </svg>
+                      4.5
+                    </div>
+                    <div className="card-popular__overlay overlay">
+                      <div className="overlay__info">
+                        <div className="overlay__title">
+                          <span className="overlay__name">Ночь в горах</span>
+                          <span className="overlay__name-desc">
+                            в компании друзей
+                          </span>
+                        </div>
+                        <div className="overlay__price">500 $</div>
+                      </div>
+                      <div className="overlay__description">
+                        <p>
+                          Его корни уходят в один фрагмент классической латыни
+                          45 года н.э., то есть более двух тысячелетий назад.
+                          Ричард МакКлинток, профессор латыни из колледжа
+                          Hampden-Sydney, штат Вирджиния, взял одно из самых
+                          странных слов в Lorem Ipsum, &#34;consectetur&#34; и
+                          занялся его поисками в классической латинской
+                          литературе.
+                        </p>
+                      </div>
+                      <button className="overlay__button button" type="button">
+                        Программа тура
+                      </button>
+                    </div>
+                  </div>
+                  <div className="card-popular__item">
+                    <div className="card-pupular__image">
+                      <Image src={slide3} alt="" priority />
+                    </div>
+                    <div className="card-popular__reating">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 17.27L16.15 19.78C16.91 20.24 17.84 19.56 17.64 18.7L16.54 13.98L20.21 10.8C20.88 10.22 20.52 9.12 19.64 9.04999L14.81 8.64L12.92 4.17999C12.58 3.36999 11.42 3.36999 11.08 4.17999L9.19 8.62999L4.36 9.03999C3.48 9.10999 3.12 10.21 3.79 10.79L7.46 13.97L6.36 18.69C6.16 19.55 7.09 20.23 7.85 19.77L12 17.27Z"
+                          fill="#F2BE22"
+                        />
+                      </svg>
+                      5.0
+                    </div>
+                    <div className="card-popular__overlay overlay">
+                      <div className="overlay__info">
+                        <div className="overlay__title">
+                          <span className="overlay__name">Йога в горах</span>
+                          <span className="overlay__name-desc">
+                            для тех, кто забоится о себе
+                          </span>
+                        </div>
+                        <div className="overlay__price">230 $</div>
+                      </div>
+                      <div className="overlay__description">
+                        <p>
+                          Его корни уходят в один фрагмент классической латыни
+                          45 года н.э., то есть более двух тысячелетий назад.
+                          Ричард МакКлинток, профессор латыни из колледжа
+                          Hampden-Sydney, штат Вирджиния, взял одно из самых
+                          странных слов в Lorem Ipsum, &#34;consectetur&#34; и
+                          занялся его поисками в классической латинской
+                          литературе.
+                        </p>
+                      </div>
+                      <button className="overlay__button button" type="button">
+                        Программа тура
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>

@@ -1,0 +1,89 @@
+.overlay {
+  transition: var(--transition-duration);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  padding: 30px 20px 20px;
+  border-radius: var(--border-radius-large-alt);
+  backdrop-filter: blur(var(--blur));
+  background: var(--rgb);
+  height: 100%;
+
+  @include tablet {
+    padding: 18px 14px 24px;
+  }
+
+  @include hover {
+    top: 0;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 38px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    color: var(--color-light);
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    &-desc {
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--color-light);
+      line-height: 1.2;
+
+      @include tablet {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-small);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    width: 86px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--color-light);
+
+    @include tablet {
+      font-size: 18px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-light);
+
+    @include tablet {
+      font-size: 12px;
+    }
+  }
+
+  &__button {
+    margin-top: auto;
+    align-self: start;
+  }
+}
