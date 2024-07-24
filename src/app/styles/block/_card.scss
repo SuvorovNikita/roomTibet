@@ -54,11 +54,13 @@
       width: 100%;
       text-align: center;
       margin-bottom: 16px;
+      padding-top: 16px;
     }
 
     @include mobile {
       width: 100%;
       text-align: left;
+      padding-top: 0;
     }
 
     @include hover {
