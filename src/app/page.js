@@ -34,7 +34,7 @@ export default function Home() {
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="section section--bg">
+      <section className="section section--bg ">
         <div className="container">
           <header className="header">
             <div className="header__inner">
