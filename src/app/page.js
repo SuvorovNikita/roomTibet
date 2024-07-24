@@ -34,7 +34,7 @@ export default function Home() {
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const [windowWidth, setWindowWidth] = useState();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
