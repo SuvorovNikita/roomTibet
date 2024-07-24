@@ -17,6 +17,10 @@ import Img6 from "@/app/assets/img/programm/4.png";
 import slide1 from "@/app/assets/img/slider/1.png";
 import slide2 from "@/app/assets/img/slider/2.png";
 import slide3 from "@/app/assets/img/slider/3.png";
+import cardImage1 from "@/app/assets/img/card/1.png";
+import cardImage2 from "@/app/assets/img/card/2.png";
+import cardImage3 from "@/app/assets/img/card/3.png";
+import cardImage4 from "@/app/assets/img/card/4.png";
 
 export default function Home() {
   const menuItems = [
@@ -29,6 +33,20 @@ export default function Home() {
   ];
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const [windowWidth, setWindowWidth] = useState();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -231,6 +249,7 @@ export default function Home() {
               <h3 className="content__subtitle">по версии отдыхающих</h3>
               <h2 className="content__title">Популярные направления</h2>
             </div>
+
             <div className="card-popular">
               <Swiper
                 breakpoints={{
@@ -406,9 +425,241 @@ export default function Home() {
               <h3 className="content__subtitle">делимся впечатлениями</h3>
               <h2 className="content__title">Блог о путешествиях</h2>
             </div>
-            <button className="button" type="button">
-              Другие материалы
-            </button>
+            <div className="card">
+              {windowWidth < 1024 ? (
+                <Swiper
+                  assertive
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 1,
+                      spaceBetween: 20,
+                    },
+                    767: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    },
+                    1024: {
+                      slidesPerView: "auto",
+                      spaceBetween: 20,
+                    },
+                    1200: {
+                      slidesPerView: 4,
+                      spaceBetween: 20,
+                    },
+                  }}
+                >
+                  <SwiperSlide>
+                    <article className="card__body">
+                      <div className="card__image">
+                        <Image src={cardImage1} alt="" priority />
+                      </div>
+                      <div className="card__content">
+                        <h3 className="card__title">
+                          Красивая Италя, какая она в реальности?
+                        </h3>
+                        <div className="card__description">
+                          <p>
+                            Для современного мира базовый вектор развития
+                            предполагает независимые способы реализации
+                            соответствующих условий активизации.
+                          </p>
+                        </div>
+                        <div className="card__info">
+                          <time
+                            datetime="2023-04-01"
+                            className="card__info-date"
+                          >
+                            01/04/2023
+                          </time>
+                          <a href="#" className="card__info-link">
+                            читать статью
+                          </a>
+                        </div>
+                      </div>
+                    </article>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <article className="card__body">
+                      <div className="card__image">
+                        <Image src={cardImage2} alt="" priority />
+                      </div>
+                      <div className="card__content">
+                        <h3 className="card__title">
+                          Долой сомнения! Весь мир открыт для вас!
+                        </h3>
+                        <div className="card__description">
+                          <p>
+                            Для современного мира базовый вектор развития
+                            предполагает независимые способы реализации
+                            соответствующих условий активизации.
+                          </p>
+                        </div>
+                        <div className="card__info">
+                          <time
+                            datetime="2023-04-01"
+                            className="card__info-date"
+                          >
+                            01/04/2023
+                          </time>
+                          <a href="#" className="card__info-link">
+                            читать статью
+                          </a>
+                        </div>
+                      </div>
+                    </article>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <article className="card__body">
+                      <div className="card__image">
+                        <Image src={cardImage3} alt="" priority />
+                      </div>
+                      <div className="card__content">
+                        <h3 className="card__title">
+                          Как подготовиться к путешествию в одиночку?
+                        </h3>
+                        <div className="card__description">
+                          <p>
+                            Для современного мира базовый вектор развития
+                            предполагает.
+                          </p>
+                        </div>
+                        <div className="card__info">
+                          <time
+                            datetime="2023-04-01"
+                            className="card__info-date"
+                          >
+                            01/04/2023
+                          </time>
+                          <a href="#" className="card__info-link">
+                            читать статью
+                          </a>
+                        </div>
+                      </div>
+                    </article>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <article className="card__body">
+                      <div className="card__image">
+                        <Image src={cardImage4} alt="" priority />
+                      </div>
+                      <div className="card__content">
+                        <h3 className="card__title">Индия ... летим?</h3>
+                        <div className="card__description card__description">
+                          <p>Для современного мира базовый.</p>
+                        </div>
+                        <div className="card__info">
+                          <time
+                            datetime="2023-04-01"
+                            className="card__info-date"
+                          >
+                            01/04/2023
+                          </time>
+                          <a href="#" className="card__info-link">
+                            читать статью
+                          </a>
+                        </div>
+                      </div>
+                    </article>
+                  </SwiperSlide>
+                </Swiper>
+              ) : (
+                <>
+                  <article className="card__body">
+                    <div className="card__image">
+                      <Image src={cardImage1} alt="" priority />
+                    </div>
+                    <div className="card__content">
+                      <h3 className="card__title">
+                        Красивая Италя, какая она в реальности?
+                      </h3>
+                      <div className="card__description">
+                        <p>
+                          Для современного мира базовый вектор развития
+                          предполагает независимые способы реализации
+                          соответствующих условий активизации.
+                        </p>
+                      </div>
+                      <div className="card__info">
+                        <time datetime="2023-04-01" className="card__info-date">
+                          01/04/2023
+                        </time>
+                        <a href="#" className="card__info-link">
+                          читать статью
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                  <article className="card__body">
+                    <div className="card__image">
+                      <Image src={cardImage2} alt="" priority />
+                    </div>
+                    <div className="card__content">
+                      <h3 className="card__title">
+                        Долой сомнения! Весь мир открыт для вас!
+                      </h3>
+                      <div className="card__description">
+                        <p>
+                          Для современного мира базовый вектор развития
+                          предполагает независимые способы реализации
+                          соответствующих условий активизации.
+                        </p>
+                      </div>
+                      <div className="card__info">
+                        <time datetime="2023-04-01" className="card__info-date">
+                          01/04/2023
+                        </time>
+                        <a href="#" className="card__info-link">
+                          читать статью
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                  <article className="card__body">
+                    <div className="card__image">
+                      <Image src={cardImage3} alt="" priority />
+                    </div>
+                    <div className="card__content">
+                      <h3 className="card__title">
+                        Как подготовиться к путешествию в одиночку?
+                      </h3>
+                      <div className="card__description">
+                        <p>
+                          Для современного мира базовый вектор развития
+                          предполагает.
+                        </p>
+                      </div>
+                      <div className="card__info">
+                        <time datetime="2023-04-01" className="card__info-date">
+                          01/04/2023
+                        </time>
+                        <a href="#" className="card__info-link">
+                          читать статью
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                  <article className="card__body">
+                    <div className="card__image">
+                      <Image src={cardImage4} alt="" priority />
+                    </div>
+                    <div className="card__content">
+                      <h3 className="card__title">Индия ... летим?</h3>
+                      <div className="card__description card__description">
+                        <p>Для современного мира базовый.</p>
+                      </div>
+                      <div className="card__info">
+                        <time datetime="2023-04-01" className="card__info-date">
+                          01/04/2023
+                        </time>
+                        <a href="#" className="card__info-link">
+                          читать статью
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                </>
+              )}
+            </div>
           </div>
         </section>
       </main>
