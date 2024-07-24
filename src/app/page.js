@@ -34,7 +34,9 @@ export default function Home() {
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const [windowWidth, setWindowWidth] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : null
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -428,7 +430,6 @@ export default function Home() {
             <div className="card">
               {windowWidth < 1024 ? (
                 <Swiper
-                  assertive
                   breakpoints={{
                     320: {
                       slidesPerView: 1,
@@ -466,7 +467,7 @@ export default function Home() {
                         </div>
                         <div className="card__info">
                           <time
-                            datetime="2023-04-01"
+                            dateTime="2023-04-01"
                             className="card__info-date"
                           >
                             01/04/2023
@@ -496,7 +497,7 @@ export default function Home() {
                         </div>
                         <div className="card__info">
                           <time
-                            datetime="2023-04-01"
+                            dateTime="2023-04-01"
                             className="card__info-date"
                           >
                             01/04/2023
@@ -525,7 +526,7 @@ export default function Home() {
                         </div>
                         <div className="card__info">
                           <time
-                            datetime="2023-04-01"
+                            dateTime="2023-04-01"
                             className="card__info-date"
                           >
                             01/04/2023
@@ -549,7 +550,7 @@ export default function Home() {
                         </div>
                         <div className="card__info">
                           <time
-                            datetime="2023-04-01"
+                            dateTime="2023-04-01"
                             className="card__info-date"
                           >
                             01/04/2023
@@ -580,7 +581,7 @@ export default function Home() {
                         </p>
                       </div>
                       <div className="card__info">
-                        <time datetime="2023-04-01" className="card__info-date">
+                        <time dateTime="2023-04-01" className="card__info-date">
                           01/04/2023
                         </time>
                         <a href="#" className="card__info-link">
@@ -605,7 +606,7 @@ export default function Home() {
                         </p>
                       </div>
                       <div className="card__info">
-                        <time datetime="2023-04-01" className="card__info-date">
+                        <time dateTime="2023-04-01" className="card__info-date">
                           01/04/2023
                         </time>
                         <a href="#" className="card__info-link">
@@ -629,7 +630,7 @@ export default function Home() {
                         </p>
                       </div>
                       <div className="card__info">
-                        <time datetime="2023-04-01" className="card__info-date">
+                        <time dateTime="2023-04-01" className="card__info-date">
                           01/04/2023
                         </time>
                         <a href="#" className="card__info-link">
@@ -648,7 +649,7 @@ export default function Home() {
                         <p>Для современного мира базовый.</p>
                       </div>
                       <div className="card__info">
-                        <time datetime="2023-04-01" className="card__info-date">
+                        <time dateTime="2023-04-01" className="card__info-date">
                           01/04/2023
                         </time>
                         <a href="#" className="card__info-link">
