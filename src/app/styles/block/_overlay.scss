@@ -15,7 +15,7 @@
     padding: 18px 14px 24px;
   }
 
-  @include hover {
+  &:hover {
     top: 0;
   }
 

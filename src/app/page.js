@@ -38,21 +38,31 @@ export default function Home() {
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : null
-  );
+  const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
+      setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+      setIsMobile(window.innerWidth < 768);
+      window.addEventListener("resize", handleResize);
+    }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
+      }
     };
   }, []);
+
+  if (windowWidth === null) {
+    return null; // Или заглушка, пока ширина окна не будет установлена
+  }
 
   return (
     <>
@@ -432,7 +442,7 @@ export default function Home() {
               <h2 className="content__title">Блог о путешествиях</h2>
             </div>
             <div className="card">
-              {windowWidth < 1024 ? (
+              {isMobile ? (
                 <Swiper
                   breakpoints={{
                     320: {
