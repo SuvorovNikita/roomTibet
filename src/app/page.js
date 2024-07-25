@@ -675,6 +675,7 @@ export default function Home() {
                 </>
               )}
             </div>
+            <button className="section__button button">Другие материалы</button>
           </div>
         </section>
       </main>
