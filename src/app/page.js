@@ -25,6 +25,18 @@ import cardMobile1 from "@/app/assets/img/card/mobile/1.png";
 import cardMobile2 from "@/app/assets/img/card/mobile/2.png";
 import cardMobile3 from "@/app/assets/img/card/mobile/3.png";
 import cardMobile4 from "@/app/assets/img/card/mobile/4.png";
+import galleryImage1 from "@/app/assets/img/photo/1.png";
+import galleryImage2 from "@/app/assets/img/photo/2.png";
+import galleryImage3 from "@/app/assets/img/photo/3.png";
+import galleryImage4 from "@/app/assets/img/photo/4.png";
+import galleryImage5 from "@/app/assets/img/photo/5.png";
+import galleryImage6 from "@/app/assets/img/photo/6.png";
+import galleryMobileImage1 from "@/app/assets/img/photo/mobile/1.png";
+import galleryMobileImage2 from "@/app/assets/img/photo/mobile/2.png";
+import galleryMobileImage3 from "@/app/assets/img/photo/mobile/3.png";
+import galleryMobileImage4 from "@/app/assets/img/photo/mobile/4.png";
+import galleryMobileImage5 from "@/app/assets/img/photo/mobile/5.png";
+import galleryMobileImage6 from "@/app/assets/img/photo/mobile/6.png";
 
 export default function Home() {
   const menuItems = [
@@ -61,7 +73,7 @@ export default function Home() {
   }, []);
 
   if (windowWidth === null) {
-    return null; // Или заглушка, пока ширина окна не будет установлена
+    return null;
   }
 
   return (
@@ -432,6 +444,9 @@ export default function Home() {
                 </SwiperSlide>
               </Swiper>
             </div>
+            <button className="section__button button" type="button">
+              Рейтинг направлений
+            </button>
           </div>
         </section>
 
@@ -675,7 +690,111 @@ export default function Home() {
                 </>
               )}
             </div>
-            <button className="section__button button">Другие материалы</button>
+            <button className="section__button button" type="button">
+              Другие материалы
+            </button>
+          </div>
+        </section>
+
+        <section className="section section--p80">
+          <div className="container">
+            <div className="section__inner">
+              <h3 className="content__subtitle">фото-отчет</h3>
+              <h2 className="content__title">Делимся впечатлениями</h2>
+            </div>
+            <div className="gallery">
+              <div className="gallery__content">
+                {isMobile ? (
+                  <Swiper
+                    breakpoints={{
+                      320: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                      },
+                      767: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                      },
+                      1024: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                      },
+                      1200: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                      },
+                    }}
+                  >
+                    <SwiperSlide>
+                      <div className="gallery__image">
+                        <Image src={galleryMobileImage1} alt="" priority />
+                        <span className="gallery__zoom"></span>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="gallery__image">
+                        <Image src={galleryMobileImage2} alt="" priority />
+                        <span className="gallery__zoom"></span>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="gallery__image">
+                        <Image src={galleryMobileImage3} alt="" priority />
+                        <span className="gallery__zoom"></span>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="gallery__image">
+                        <Image src={galleryMobileImage4} alt="" priority />
+                        <span className="gallery__zoom"></span>
+                      </div>
+                    </SwiperSlide>{" "}
+                    <SwiperSlide>
+                      <div className="gallery__image">
+                        <Image src={galleryMobileImage5} alt="" priority />
+                        <span className="gallery__zoom"></span>
+                      </div>
+                    </SwiperSlide>{" "}
+                    <SwiperSlide>
+                      <div className="gallery__image">
+                        <Image src={galleryMobileImage6} alt="" priority />
+                        <span className="gallery__zoom"></span>
+                      </div>
+                    </SwiperSlide>
+                  </Swiper>
+                ) : (
+                  <>
+                    <div className="gallery__image">
+                      <Image src={galleryImage1} alt="" priority />
+                      <span className="gallery__zoom"></span>
+                    </div>
+                    <div className="gallery__image">
+                      <Image src={galleryImage2} alt="" priority />
+                      <span className="gallery__zoom"></span>
+                    </div>
+                    <div className="gallery__image">
+                      <Image src={galleryImage3} alt="" priority />
+                      <span className="gallery__zoom"></span>
+                    </div>
+                    <div className="gallery__image">
+                      <Image src={galleryImage4} alt="" priority />
+                      <span className="gallery__zoom"></span>
+                    </div>
+                    <div className="gallery__image">
+                      <Image src={galleryImage5} alt="" priority />
+                      <span className="gallery__zoom"></span>
+                    </div>
+                    <div className="gallery__image">
+                      <Image src={galleryImage6} alt="" priority />
+                      <span className="gallery__zoom"></span>
+                    </div>
+                  </>
+                )}
+              </div>
+              <button className="section__button button" type="button">
+                Наш pinterest
+              </button>
+            </div>
           </div>
         </section>
       </main>

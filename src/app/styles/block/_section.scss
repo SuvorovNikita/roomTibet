@@ -11,10 +11,6 @@
     padding: 80px 0 100px;
 
     @include tablet {
-      padding: 50px 0 10px;
-    }
-
-    @include mobile {
       padding: 50px 0 50px;
     }
   }
@@ -42,10 +38,22 @@
 
   &__inner {
     text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
   }
 
   &__button {
     display: flex;
     margin: 50px auto auto;
+
+    @include tablet {
+      margin: 32px auto auto;
+    }
+  }
+
+  &__image {
+    position: relative;
   }
 }
