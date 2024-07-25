@@ -21,6 +21,10 @@ import cardImage1 from "@/app/assets/img/card/1.png";
 import cardImage2 from "@/app/assets/img/card/2.png";
 import cardImage3 from "@/app/assets/img/card/3.png";
 import cardImage4 from "@/app/assets/img/card/4.png";
+import cardMobile1 from "@/app/assets/img/card/mobile/1.png";
+import cardMobile2 from "@/app/assets/img/card/mobile/2.png";
+import cardMobile3 from "@/app/assets/img/card/mobile/3.png";
+import cardMobile4 from "@/app/assets/img/card/mobile/4.png";
 
 export default function Home() {
   const menuItems = [
@@ -432,7 +436,7 @@ export default function Home() {
                 <Swiper
                   breakpoints={{
                     320: {
-                      slidesPerView: 1,
+                      slidesPerView: 1.5,
                       spaceBetween: 20,
                     },
                     767: {
@@ -452,7 +456,7 @@ export default function Home() {
                   <SwiperSlide>
                     <article className="card__body">
                       <div className="card__image">
-                        <Image src={cardImage1} alt="" priority />
+                        <Image src={cardMobile1} alt="" priority />
                       </div>
                       <div className="card__content">
                         <h3 className="card__title">
@@ -482,7 +486,7 @@ export default function Home() {
                   <SwiperSlide>
                     <article className="card__body">
                       <div className="card__image">
-                        <Image src={cardImage2} alt="" priority />
+                        <Image src={cardMobile2} alt="" priority />
                       </div>
                       <div className="card__content">
                         <h3 className="card__title">
@@ -512,7 +516,7 @@ export default function Home() {
                   <SwiperSlide>
                     <article className="card__body">
                       <div className="card__image">
-                        <Image src={cardImage3} alt="" priority />
+                        <Image src={cardMobile3} alt="" priority />
                       </div>
                       <div className="card__content">
                         <h3 className="card__title">
@@ -541,7 +545,7 @@ export default function Home() {
                   <SwiperSlide>
                     <article className="card__body">
                       <div className="card__image">
-                        <Image src={cardImage4} alt="" priority />
+                        <Image src={cardMobile4} alt="" priority />
                       </div>
                       <div className="card__content">
                         <h3 className="card__title">Индия ... летим?</h3>
