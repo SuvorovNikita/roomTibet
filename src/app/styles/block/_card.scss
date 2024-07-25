@@ -19,6 +19,7 @@
 
     @include tablet {
       flex-direction: column;
+      padding-top: 16;
     }
 
     @include mobile {
