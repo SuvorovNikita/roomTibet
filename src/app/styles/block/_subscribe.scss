@@ -1,0 +1,36 @@
+.subscribe {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+  box-shadow: 0 0 15px 0 rgba(24, 18, 30, 0.12);
+  background: var(--color-light);
+  border-radius: var(--border-radius-small-2);
+  gap: 15px;
+
+  &__label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--color-dark);
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    max-width: 536px;
+    font-size: 14px;
+    line-height: 1.28571;
+    color: var(--color-dark);
+
+    &-link {
+      text-decoration: underline;
+    }
+  }
+}

@@ -16,6 +16,18 @@
     border-radius: var(--border-radius-mid);
     appearance: none;
 
+    &--email {
+      height: 44px;
+      background: var(--color-dark-ligtht);
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--color-dark);
+
+      &::placeholder {
+        color: var(--color-dark);
+      }
+    }
+
     @include desktop {
       width: 204px;
     }

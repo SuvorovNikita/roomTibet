@@ -797,6 +797,49 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="section">
+          <div className="container">
+            <div className="subscribe">
+              <div className="content">
+                <h3 className="content__subtitle content__subtitle--form">
+                  актуально
+                </h3>
+                <h2 className="content__title content__title--form">
+                  Получайте полезные рассылки о путешествиях
+                </h2>
+              </div>
+              <form className="subscribe__form field" action="">
+                <label className="subscribe__label">Введите e-mail адрес</label>
+                <div className="subscribe__body">
+                  <input
+                    className="field__input field__input--email"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Введите e-mail адрес"
+                  />
+
+                  <button className="subscribe__button button" type="submit">
+                    Подписаться на новости
+                  </button>
+                </div>
+                <div className="subscribe__description">
+                  <p>
+                    подписываясь на новости, вы автоматически соглашаетесь с
+                    <a href="" className="subscribe__description-link">
+                      условиями обработки персональных данных
+                    </a>
+                    &nbsp;и&nbsp;
+                    <a href="" className="subscribe__description-link">
+                      правилами рекламных рассылок
+                    </a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
       </main>
 
       <dialog

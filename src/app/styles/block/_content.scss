@@ -7,12 +7,22 @@
     line-height: 0.83333;
     color: var(--color-yellow);
     margin-bottom: 8px;
+
+    &--form {
+      font-size: 18px;
+    }
   }
 
   &__title {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 40px;
+
+    &--form {
+      margin-bottom: 0;
+      max-width: 405px;
+      font-size: 26px;
+    }
 
     @include mobile {
       margin-bottom: 24px;
