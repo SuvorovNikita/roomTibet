@@ -8,6 +8,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="shortcut icon" href="logo.ico" />
+      </head>
       <body>{children}</body>
     </html>
   );
