@@ -8,6 +8,21 @@
   background: var(--color-light);
   border-radius: var(--border-radius-small-2);
   gap: 15px;
+  margin-bottom: -96px;
+
+  @include tablet {
+    flex-direction: column;
+    padding: 40px;
+    align-items: flex-start;
+  }
+
+  @include mobile {
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    padding: 24px;
+  }
 
   &__label {
     font-weight: 600;
@@ -21,6 +36,11 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 8px;
+
+    @include tablet {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
   }
 
   &__description {
@@ -31,6 +51,14 @@
 
     &-link {
       text-decoration: underline;
+    }
+  }
+
+  &__button {
+    align-self: flex-start;
+
+    @include tablet {
+      margin-bottom: 24px;
     }
   }
 }

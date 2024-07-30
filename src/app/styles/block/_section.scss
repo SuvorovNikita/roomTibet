@@ -15,6 +15,12 @@
     }
   }
 
+  &--pb50 {
+    @include mobile {
+      padding-bottom: 50px;
+    }
+  }
+
   &--bg {
     background-image: url(../../assets/img/bg.png);
     background-size: cover;

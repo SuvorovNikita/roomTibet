@@ -10,6 +10,10 @@
 
     &--form {
       font-size: 18px;
+
+      @include mobile {
+        font-size: 16px;
+      }
     }
   }
 
@@ -22,6 +26,11 @@
       margin-bottom: 0;
       max-width: 405px;
       font-size: 26px;
+
+      @include mobile {
+        font-size: 24px;
+        margin-bottom: 9px !important;
+      }
     }
 
     @include mobile {

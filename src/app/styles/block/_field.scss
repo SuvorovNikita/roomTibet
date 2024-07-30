@@ -26,6 +26,11 @@
       &::placeholder {
         color: var(--color-dark);
       }
+
+      @include tablet {
+        display: flex !important;
+        margin-bottom: 16px;
+      }
     }
 
     @include desktop {
